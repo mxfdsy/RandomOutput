@@ -23,12 +23,11 @@ public class RandomOutput {
                 StringBuilder sb = new StringBuilder(26);
                 for (int i = 0; i < max - min; i++) {
                     int index = new Random().nextInt(size);
-//                  System.out.println("第" + (i + 1) + "个字母 " + list.remove(index));
-                    while (!(sb.length() != len)) {
-                        System.out.println(sb.toString());
-                        sb.replace(0,len,"");
-                    }
                     sb.append(list.remove(index));
+                    if (sb.length() == len) {
+                        System.out.println(sb.toString());
+                        sb.replace(0, len, "");
+                    }
                     size--;
                 }
                 System.out.println(sb.toString());
